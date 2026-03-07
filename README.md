@@ -9,7 +9,47 @@ Throughout this AI training course, which includes over 170 hours of interactive
 Upon completing the bootcamp, you will possess the necessary skills to enter the job market as an AI Generalist or AI Specialist a skillset that is currently a competitive advantage and will soon become a critical necessity in the job market.
 
 
+## 1. **Soft Skills**
 
+- **Personality Assessment** (Valid personality assessment tools: NEO Personality Inventory, vocational interest assessment using the HOLLAND test) and analysis  
+- **Teamwork** (The Five Dysfunctions of a Team, the ideal team player)  
+- **Developing Learning Skills** (Time management, attention management, planning, levels of learning)
+
+## 2. **Python**
+
+- Introduction to the Python programming language, its applications, and execution environments  
+- Introduction to variables and methods of defining them  
+- Familiarity with the `string` data type: definition and assignment  
+- Introduction to the `list` data structure for storing collections of data  
+- Introduction to `dictionary`  
+- Explanation of loops, including `for` loops and `while` loops  
+- Review of conditional statements: `if`, `elif`, `else`  
+- Defining functions: creation, parameter passing, and return values  
+- Introduction to modules and packages  
+- Comprehensive overview of Object-Oriented Programming (OOP) fundamentals  
+- Introduction to error handling and exception management  
+- Working with files (reading, writing, and file operations)  
+- Introduction to Regular Expressions (regex)  
+- Familiarity with advanced data structures  
+- Introduction to algorithms and concurrency concepts  
+
+## 3. **AI with Python**
+
+- Introduction to the Python programming language and its applications  
+- Introduction to Jupyter Notebook as an interactive environment for writing, executing, and documenting code  
+- Overview of Python's built-in data structures, defining and using functions, and working with files  
+- Introduction to the NumPy library and its importance in Artificial Intelligence  
+- Introduction to `array` as a data structure and how to work with it  
+- Familiarity with the concept of vectorized computation  
+- Review of counting principles  
+- Introduction to the Pandas library and its core data structures  
+- Descriptive analytics and exploratory data analysis  
+- Familiarity with the data loading process, managing data storage, and handling various file formats using Pandas  
+- Review of the data cleaning process and data preparation for analysis  
+- Data wrangling: methods for joining, combining, and reshaping data  
+- Plotting and data visualization techniques  
+- Training on data aggregation methods and working with group operations  
+- Introduction to statistical estimation, estimating population parameters, and examining hypothesis testing  
 
 
 
