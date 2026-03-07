@@ -51,6 +51,103 @@ Upon completing the bootcamp, you will possess the necessary skills to enter the
 - Training on data aggregation methods and working with group operations  
 - Introduction to statistical estimation, estimating population parameters, and examining hypothesis testing  
 
+## 4. **Introductory Machine Learning**
+
+- Definition of Machine Learning and its differences from traditional programming  
+- Introduction to the Linear Regression algorithm  
+- Fundamentals of Logistic Regression for data classification  
+- Introduction to Scikit-learn: a powerful and popular Python library for implementing machine learning models  
+- Explanation of the main components of the Scikit-learn library  
+- Training on hyperparameters and their distinction from model parameters  
+- Introduction to model validation methods (model evaluation and assessment)  
+- Familiarity with feature engineering: the process of creating, selecting, or transforming data features to improve model accuracy  
+
+## 5. **Advanced Machine Learning**
+
+- Introduction to the concept of Anomaly Detection and outlier detection  
+- Introduction to the Isolation Forest algorithm  
+- Familiarity with LOF and the Local Outlier Factor  
+- Definition of Feature Selection as the process of selecting a subset of features  
+- Filter Methods  
+- Wrapper Methods: evaluating various feature subsets using a model and selecting the best subset based on performance  
+- Introduction to Embedded Methods  
+- Familiarity with Univariate Feature Selection and Recursive Feature Selection   
+- Introduction to the Sequential Feature Selection algorithm  
+
+## 6. **Git**
+
+- Git Fundamentals  
+- Branches and Branch Management  
+- Merging and Conflict Resolution  
+- Managing Temporary Changes (Stash)  
+- Reviewing and Comparing Changes  
+- Time Travel and Reverting Changes  
+- GitHub and Working with Remote Repositories  
+- Documentation  
+
+## 7. **Deep Learning**
+
+- Introduction to Neural Networks and Feedforward Neural Networks (NNs)  
+- What is a Neural Network?  
+- Introduction to the Perceptron as the simplest neuron and Multi-Layer Perceptrons (MLP)  
+- Understanding Activation Functions  
+- Forward and Backward Propagation  
+- Understanding the Training Loop  
+- Concepts of Epochs, Batches, and Learning Rate  
+- Evaluation Metrics: Accuracy, Precision, Recall, and F1  
+- Introduction to Normalization and Standardization  
+- Why do we use GPUs?  
+- Understanding Vanishing Gradient and Exploding Gradient problems  
+- Comprehensive understanding of MLP architecture  
+- Practical implementation of MLP models using PyTorch  
+- Designing a training pipeline  
+- Experimenting with and analyzing the impact of Hyperparameters  
+- Visualizing training progress   
+- Evaluating trained models    
+
+## 8. **Linear Algebra**
+
+- Introduction to Vectors and vector operations  
+- Definition of Matrices and examination of matrix operations  
+- Introduction to Transpose, Inverse, and Determinant of matrices  
+- Understanding systems of linear equations and the role of Matrix Rank  
+- Comprehension of Eigenvalues and Eigenvectors in matrices  
+
+## 9. **Signal Processing**
+
+- Fundamentals of Signals in Machine Learning  
+- Introduction to Signals and their importance in Data Mining  
+- Types of Signals (Discrete, Continuous, One-dimensional, Multi-dimensional)  
+- Key Signal Characteristics (Time, Frequency, Energy, and Power)  
+- Signal Preprocessing (Filtering, Noise Removal, Normalization)  
+- Feature Extraction from Signals (Fourier Transform, Wavelet Transform, Statistical Features)  
+- Machine Learning Applications in Signal Processing (EEG, Audio, Sensors)  
+
+## 10. **Time Series**
+
+- Machine Learning on Time Series Data  
+- Introduction to Time Series Data and differences from tabular data  
+- Key Concepts: Stationarity, Trend, Seasonality, and Noise  
+- Time Series Preprocessing (Lag features, Sliding windows, Differencing)  
+- Classical Time Series Models (AR, MA, ARMA, ARIMA, SARIMA)  
+- Machine Learning for Time Series (Random Forest, SVM, XGBoost)  
+- Deep Learning for Time Series (RNN, LSTM, GRU, CNN)  
+- Applications: Financial Forecasting, Sensor Analysis, Healthcare, and IoT   
+
+## 11. **NLP - Natural Language Processing**
+
+- Introduction to Natural Language Processing (NLP)  
+- Overview of key Text Preprocessing steps  
+- NLTK and spaCy: Introduction to two essential and practical NLP libraries  
+- Familiarity with `pdfplumber` and `PyMuPDF` tools for reading and extracting content from PDF files  
+- Using `BeautifulSoup` to remove tags, scripts, and noise from web pages  
+- Review of methods for Text Representation (converting text into numerical formats)  
+- Introduction to Language Models and the concept of Contextual Embeddings  
+- Understanding Recurrent Neural Networks (RNNs)  
+- Generative NLP using Large Language Models (LLMs) for text generation  
+- Defining tasks such as Sequence Labeling and Named Entity Recognition (NER)  
+- Familiarity with Semantic Parsing and Paraphrase Detection  
+- Advanced NLP applications and Multimodal Processing    
 
 
 
