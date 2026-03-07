@@ -1,3 +1,20 @@
+**AI with Python Course: A Project-Based Training Bootcamp**
+
+In the Daneshkar AI with Python course, you embark on a comprehensive journey into the world of Artificial Intelligence—a journey designed to give you a fresh perspective on technology, data, and your career future. AI is no longer a luxury skill; it is a necessity for professional growth and advancement. From data analysis and process automation to future forecasting and enhancing customer experience, this AI training helps you understand how this technology is transforming every industry and why learning it is considered an investment in your career future.
+
+The Daneshkar AI with Python Bootcamp starts at the beginner level and requires no prerequisites. All fundamental concepts are taught step-by-step, ensuring that even individuals without prior experience can start their learning path with confidence. However, familiarity with Python can accelerate your progress along this journey.
+
+Throughout this AI training course, which includes over 170 hours of interactive, project-based content, you will become familiar with real-world AI applications across various job roles. You will learn how to enhance your performance and multiply your productivity.
+
+Upon completing the bootcamp, you will possess the necessary skills to enter the job market as an AI Generalist or AI Specialist—a skillset that is currently a competitive advantage and will soon become a critical necessity in the job market.
+
+
+
+
+
+
+
+
 # AI BOOTCAMP
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
