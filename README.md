@@ -191,6 +191,7 @@ Upon completing the bootcamp, you will possess the necessary skills to enter the
 
 
 
+
 # AI BOOTCAMP
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
