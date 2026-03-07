@@ -149,6 +149,45 @@ Upon completing the bootcamp, you will possess the necessary skills to enter the
 - Familiarity with Semantic Parsing and Paraphrase Detection  
 - Advanced NLP applications and Multimodal Processing    
 
+## 12. **Fundamentals of Generative AI**
+
+- Introduction to the Transformer architecture as the core foundation  
+- Familiarity with Multilingual and Multimodal Large Language Models (LLMs)  
+- Introduction to Model Compression techniques and Deployment principles  
+- Overview of popular models and their ecosystems  
+- Understanding Evaluation and Benchmarking methods for LLMs  
+- Introduction to Stable Diffusion as a generative image model  
+- Review of practical Design Patterns for Generative AI (GenAI)  
+
+## 13. **Computer Vision**
+
+- Introduction to Computer Vision  
+- From MLPs to CNNs (Convolutional Neural Networks)  
+- Image Classification using CNNs  
+- Applying Data Augmentation to increase image data diversity  
+- Introduction to famous Pretrained CNNs such as ResNet, VGG, and EfficientNet  
+- Understanding Fine-tuning and Image Segmentation  
+
+## 14. **MLOps (Machine Learning Operations)**
+
+- Introduction to MLOps (Machine Learning Operations)  
+- Overview of ML Development using Version Control  
+- Environment Management and Dependencies  
+- Utilizing Data Management and Experiment Tracking tools  
+- Implementing best practices in Model Development and Testing  
+- Introduction to Model Packaging and Deployment concepts  
+- Focus on Data and Model Monitoring in Production environments  
+- Implementing appropriate CI/CD pipelines for ML to automate workflows  
+
+## 15. **Recommender Systems**
+
+- Introduction to Recommender Systems and their applications
+- Data Representation in Recommender Systems (User-Item Matrix, Embeddings)
+- Evaluation Metrics for Recommenders (Precision, Recall, MAP, NDCG)
+- Classical Algorithms (KNN, SVD, Matrix Factorization)
+- Deep Learning in Recommender Systems (Autoencoders, Neural Collaborative Filtering, Seq2Seq)
+- Challenges and Future Trends (Scalability, Cold Start Problem, Temporal and Interactive Data)
+- Main Approaches: Content-Based, Collaborative Filtering, and Hybrid Methods
 
 
 
