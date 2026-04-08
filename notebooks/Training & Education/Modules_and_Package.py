@@ -1,17 +1,17 @@
 # Modules and Package 
 
 
-def sum(first_number:float, second_number:float)->float:
+def sum_test(first_number:float, second_number:float)->float:
     """ Adds tow Number and return the result """
     return first_number + second_number
 
 
-def sub(first_number:float, second_number:float)->float:
+def sub_test(first_number:float, second_number:float)->float:
     """ Subtracts tow Number and return the result """
     return first_number - second_number
 
 
-def product(first_number:float, second_number:float)->float:
+def product_Test(first_number:float, second_number:float)->float:
     """ Multiplies tow Number and return the result """
     return first_number * second_number
 
