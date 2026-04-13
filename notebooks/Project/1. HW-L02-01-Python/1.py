@@ -19,12 +19,12 @@ def PrintNumber():
             number = int(number)
             if number > 3:
                 if not number % 2:
+                    print("Result is:")
                     for i in range(2, number + 1 ,2):
-                        print("Result is:")
                         print(i, end=",")
                 else:
+                    print("Result is:")
                     for i in range(1, number + 1 ,2):
-                        print("Result is:")
                         print(i, end=",")
                 break
             else:
@@ -42,5 +42,6 @@ while True:
         PrintNumber()
     else:
         print("-----------Thank you-----------")
+        break
     
 
