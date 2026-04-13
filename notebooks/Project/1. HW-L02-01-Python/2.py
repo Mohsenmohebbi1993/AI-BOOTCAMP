@@ -11,8 +11,8 @@ def count_vowels(text:str)->int:
     """
 
     VOWELS = ["a", "e", "i", "o", "u"]
-    TEXT_LOWER = TEXT.lower()
-    counter = 0
+    TEXT_LOWER = TEXT.lower() # all charechter to lower
+    counter = 0 # counter vowels
     for i in TEXT_LOWER:
         if i in VOWELS:
             counter += 1
