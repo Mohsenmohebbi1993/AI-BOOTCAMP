@@ -4,4 +4,43 @@
 # If the number is even, it should print all even numbers from 2 up to that number
 # If the user's input is invalid, an appropriate error message should be displayed
 
-number = input("Enter a Number: ")
+
+def PrintNumber():
+    """ PrintNumber is a function that takes a number as input and performs the following:  
+        Validates whether the input has the correct data type; if incorrect, it prompts the user to enter the number again.  
+        If the number is less than 3, it requests the input again.  
+        Based on the input, it prints the numbers as follows:  
+        If the number is even, it prints all even numbers from 2 up to that number.  
+        If the number is odd, it prints all odd numbers from 1 up to that number. """ 
+    
+    number = input("Enter One number: ") 
+    while True:
+        if number.isdigit():
+            number = int(number)
+            if number > 3:
+                if not number % 2:
+                    for i in range(2, number + 1 ,2):
+                        print("Result is:")
+                        print(i, end=",")
+                else:
+                    for i in range(1, number + 1 ,2):
+                        print("Result is:")
+                        print(i, end=",")
+                break
+            else:
+                print("The number must be greater than 3, for EX: 4, 5,...")
+        number = input("Enter another Number") 
+
+
+
+while True:
+    print("--------------RUN--------------")
+    print("1. Run (Enter number): 1")
+    print("2. Exit (Enter number): 2")
+    Status = int(input("Enter Your Status: "))
+    if Status == 1:
+        PrintNumber()
+    else:
+        print("-----------Thank you-----------")
+    
+
