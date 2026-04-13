@@ -26,11 +26,11 @@ def PrintNumber():
                     print("Result is:")
                     for i in range(1, number + 1 ,2):
                         print(i, end=",")
-                print("")
+                print("") # last print has end=","
                 break
             else:
                 print("The number must be greater than 3, for EX: 4, 5,...")
-        number = input("Enter another Number") 
+        number = input("Enter another Number: ") 
 
 
 
