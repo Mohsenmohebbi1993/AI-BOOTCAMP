@@ -16,4 +16,20 @@ def count_vowels(text:str)->int:
     for i in TEXT_LOWER:
         if i in VOWELS:
             counter += 1
-    print(f"Number of vowels is {counter}") 
+    print(f"*** Number of vowels is {counter} ***") 
+
+
+while True:
+    print("--------------RUN--------------")
+    print("1. Run (Machine Learning): 1")
+    print("1. Run (Your Text): 2")
+    print("2. Exit (Enter number): 3")
+    Status = int(input("Enter Your Status: "))
+    if Status == 1:
+        TEXT = "Machine Learning"
+        count_vowels(TEXT)
+    elif Status == 2:
+        TEXT = input("Enter your Text: ")
+    else:
+        print("-----------Thank you-----------")
+        break
