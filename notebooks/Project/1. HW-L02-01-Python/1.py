@@ -7,11 +7,11 @@
 
 def PrintNumber():
     """ PrintNumber is a function that takes a number as input and performs the following:  
-        Validates whether the input has the correct data type; if incorrect, it prompts the user to enter the number again.  
-        If the number is less than 3, it requests the input again.  
-        Based on the input, it prints the numbers as follows:  
-        If the number is even, it prints all even numbers from 2 up to that number.  
-        If the number is odd, it prints all odd numbers from 1 up to that number. """ 
+        1. Validates whether the input has the correct data type; if incorrect, it prompts the user to enter the number again.  
+        2. If the number is less than 3, it requests the input again.  
+        3. Based on the input, it prints the numbers as follows:  
+        4. If the number is even, it prints all even numbers from 2 up to that number.  
+        5. If the number is odd, it prints all odd numbers from 1 up to that number. """ 
     
     number = input("Enter One number: ") 
     while True:
@@ -26,6 +26,7 @@ def PrintNumber():
                     print("Result is:")
                     for i in range(1, number + 1 ,2):
                         print(i, end=",")
+                print("")
                 break
             else:
                 print("The number must be greater than 3, for EX: 4, 5,...")
