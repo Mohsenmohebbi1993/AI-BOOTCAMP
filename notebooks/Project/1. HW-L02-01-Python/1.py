@@ -15,22 +15,25 @@ def PrintNumber():
     
     number = input("Enter One number: ") 
     while True:
-        if number.isdigit():
-            number = int(number)
-            if number > 3:
-                if not number % 2:
+        if number.isdigit(): # if input is not number
+            number = int(number) # change type
+            if number > 3: # chacke numbe is greet than 3
+                if not number % 2: # in number is Even
                     print("Result is:")
                     for i in range(2, number + 1 ,2):
                         print(i, end=",")
-                else:
+
+                else: # number is Odd
                     print("Result is:")
                     for i in range(1, number + 1 ,2):
                         print(i, end=",")
+
                 print("") # last print has end=","
                 break
+
             else:
                 print("The number must be greater than 3, for EX: 4, 5,...")
-        number = input("Enter another Number: ") 
+        number = input("Enter another Number: ") # number is not valid and input another number
 
 
 
