@@ -3,7 +3,7 @@
 # give one sentence and reverse
 
 
-def reverse_the_sentence_1(SENTEMCE:str):
+def reverse_the_sentence_1(SENTEMCE:str)-> str:
     """ **Reverse the sentence**  
         give one sentence and reverse
     """
@@ -12,8 +12,9 @@ def reverse_the_sentence_1(SENTEMCE:str):
     REVERSED_SENTEMCE = LIST_SENTEMCE[::-1]
     print(*REVERSED_SENTEMCE)
 
+
 # or ---------------------
-def reverse_the_sentence_2(SENTEMCE:str):
+def reverse_the_sentence_2(SENTEMCE:str)-> str:
     """ **Reverse the sentence**  
         give one sentence and reverse
     """
@@ -23,8 +24,9 @@ def reverse_the_sentence_2(SENTEMCE:str):
         print(LIST_SENTEMCE[i], end=" ")
     print() # last print has end=" ",don't want the next print to stick to it
 
+
 # or 
-def reverse_the_sentence_3(SENTEMCE:str):
+def reverse_the_sentence_3(SENTEMCE:str)-> str:
     """ **Reverse the sentence**  
         give one sentence and reverse
     """
