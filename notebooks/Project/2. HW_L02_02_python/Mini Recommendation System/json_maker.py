@@ -34,4 +34,8 @@ users = {
         "Fatemeh Rahmani": ["Fight Club", "Prestige", "Pulp Fiction", "Matrix", "Avatar"],
         "Mahdie Kazemi": ["Titanic", "Avatar", "Prestige", "Shutter Island", "Matrix"]}
 
-
+# your path
+PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Mini Recommendation System"
+with open(f"{PATH}\\users.json", "w", encoding="utf-8") as f:
+    
+    json.dump(users, f, indent=4, ensure_ascii=False)
