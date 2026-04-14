@@ -12,3 +12,14 @@
 
 print("First, enter the number of courses")
 NUMBER_OF_COURSES = int(input("Enter number of courses: "))
+grade_list = []
+for i in range(NUMBER_OF_COURSES):
+    grade = float(input(f"Enter grade of {i+1} course: "))
+    while True: # chacke 0 <= grade <= 20
+        if 0 <= grade <= 20:
+            grade_list.append(grade)
+            break
+        else: # if The grade is incorrect, give correct grade
+            grade = float(input(f"The grade is incorrect, Enter grade of {i+1} course: "))
+    
+
