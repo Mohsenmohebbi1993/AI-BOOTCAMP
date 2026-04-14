@@ -7,6 +7,7 @@ def reverse_the_sentence_1(SENTEMCE:str)-> str:
     """ **Reverse the sentence**  
         give one sentence and reverse
     """
+    # clean SENTEMCE
     SENTEMCE = SENTEMCE.replace(".", " ").replace("  ", " ").strip()
     LIST_SENTEMCE = SENTEMCE.split()
     REVERSED_SENTEMCE = LIST_SENTEMCE[::-1]
@@ -18,6 +19,7 @@ def reverse_the_sentence_2(SENTEMCE:str)-> str:
     """ **Reverse the sentence**  
         give one sentence and reverse
     """
+    # clean SENTEMCE
     SENTEMCE = SENTEMCE.replace(".", " ").replace("  ", " ").strip()
     LIST_SENTEMCE = SENTEMCE.split()
     for i in range(len(LIST_SENTEMCE)-1, -1, -1): # range(10 , 0, -1) does not include 0
@@ -30,6 +32,7 @@ def reverse_the_sentence_3(SENTEMCE:str)-> str:
     """ **Reverse the sentence**  
         give one sentence and reverse
     """
+    # clean SENTEMCE
     SENTEMCE = SENTEMCE.replace(".", " ").replace("  ", " ").strip()
     LIST_SENTEMCE = SENTEMCE.split()
     for i in range(0, len(LIST_SENTEMCE)):
