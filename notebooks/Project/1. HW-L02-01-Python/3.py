@@ -6,6 +6,10 @@
 
 def dictionary(TEXT):
     TEXT_LOWER = TEXT.lower()
+    # replace "." to " "
+    # replace "  "tow space to " " one space
+    #strip first and end space
+    TEXT_LOWER = TEXT_LOWER.replace(".", " ").replace("  ", " ").strip()
     LIST_TEXT = TEXT_LOWER.split(" ")
     LIST_TEST_UNIQUE = list(set(LIST_TEXT))
     dictionary = {}
@@ -21,5 +25,7 @@ def dictionary(TEXT):
 
 
 TEXT = "Data science makes data useful"
+# TEXT = "I am Mohsen Mohabbi. I have enrolled in the AI bootcamp. I want to complete this course successfully."
 dictionary(TEXT)
+
 
