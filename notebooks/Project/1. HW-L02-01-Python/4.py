@@ -1,6 +1,6 @@
-# Calculate the average
+# Calculate the average grade
 #task is:
-#Write a program that calculates the user's GPA based on the list below.
+#Write a program that calculates avrage grade.
 # First, ask the user for the number of courses,
 # then receive the grades for those courses,
 # and finally calculate the average of these grades and convert it to a GPA according to the table below.
