@@ -45,6 +45,8 @@ def reverse_the_sentence_3(SENTEMCE:str)-> str:
 
 
 SENTEMCE = "Data science is fun"
+# SENTEMCE = "I am Mohsen Mohabbi. I have enrolled in the AI bootcamp. I want to complete this course successfully."
+
 reverse_the_sentence_1(SENTEMCE)
 reverse_the_sentence_2(SENTEMCE)
 reverse_the_sentence_3(SENTEMCE)
