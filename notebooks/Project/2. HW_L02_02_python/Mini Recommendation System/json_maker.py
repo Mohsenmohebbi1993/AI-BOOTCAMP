@@ -36,7 +36,7 @@ def make_json_file(PATH:str):
             "Amirhoseyn Rostami": ["Avatar", "Matrix", "Gladiator", "Se7en", "Inception"],
             "Maryam Ebrahimi": ["Se7en", "Prestige", "Shutter Island", "Inception", "The Godfather"],
             "Fatemeh Rahmani": ["Fight Club", "Prestige", "Pulp Fiction", "Matrix", "Avatar"],
-            "Mahdie Kazemi": ["Titanic", "Avatar", "Prestige", "Shutter Island", "Matrix"]}
+            "Mohsen Mohebbi": ["Titanic", "Avatar", "Prestige", "Shutter Island", "Matrix"]}
 
     # your path
     # PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Mini Recommendation System"
