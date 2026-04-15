@@ -4,7 +4,7 @@
 # package import:
 import os
 import json
-
+import random
 #-----------------------
 
 # Function:
@@ -132,9 +132,29 @@ for each_old_user in OLD_USERS:
     if ranking_old_user[each_old_user] == number_grade_old_user:
         user_top_grade.append(user_data[each_old_user])
 
-movie_list = []
+# suggestion movie list (by Duplicate)
+suggestion_movie_list = []
 for i in range(len(user_top_grade)):
     for j in user_top_grade[i]:
-        movie_list.append(j)
+        suggestion_movie_list.append(j)
 
-movie_list = list(set(movie_list))
+# suggestion movie list (by NOT Duplicate)
+suggestion_movie_list = list(set(suggestion_movie_list))
+
+
+OLD_USER_LIST = list(user_data.keys())
+if not full_name in OLD_USER_LIST: # If the user is already registered, they have watched 5 movies
+    # remove movie, that user see
+    for i in user_movies: # 3 movies
+        if i in suggestion_movie_list:
+            suggestion_movie_list.remove(i)
+    print(random.choices(suggestion_movie_list))
+else:
+    # remove movie, that user see
+    user_movies = user_data[full_name] # 5 movies
+    for i in user_movies:
+        if i in suggestion_movie_list: # 5 movies
+            suggestion_movie_list.remove(i)
+    print(random.choices(suggestion_movie_list))
+
+
