@@ -21,12 +21,13 @@ def Checking_json_file(PATH:str):
 
     if not "users.json" in LIST_FILE: # chacke file as `users.json`
         import json_maker # use my mudel, make `users.json` default
-        json_maker.make_json_file()
+        json_maker.make_json_file(PATH) # I create this package
         print("Creat users.json file in this Directory")
     else:
         print("Find users.json in this Directory")
 
-
+# my PATH
 PATH = r".\notebooks\Project\2. HW_L02_02_python\Mini Recommendation System"
+# PATH = "." # your PATH
 Checking_json_file(PATH)
 
