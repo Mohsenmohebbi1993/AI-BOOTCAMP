@@ -3,12 +3,12 @@
 #-----------------------
 # package import:
 import os
+import json
 
 #-----------------------
-print("----------------start Code----------------")
 
 # Function:
-
+# 1. Json file chacker
 def Checking_json_file(PATH:str):
     """ **Checking_json_file**   
     Chacke json file as `users.json`   
@@ -26,8 +26,83 @@ def Checking_json_file(PATH:str):
     else:
         print("Find users.json in this Directory")
 
+
+# 2. # Read json file
+def read_json_file(PATH:str):
+    """ Function **read_json_file**   
+        read json file  
+        thas is old user"""
+    
+    JSON_FILE = "users.json"
+    PATH_JSON_FILE = f"{PATH}\\{JSON_FILE}"
+    with open(PATH_JSON_FILE, "r", encoding="utf-8") as f: user_data = json.load(f)
+    return user_data
+
+
+# 3. finde all available movies
+def all_movies(user_data_from_json:dict):
+    """ **all_movies**  
+    return all movies availabel"""
+    DICT_USER_DATA_VALUES = list(user_data.values())
+    MOVIES = []
+    for each_list in DICT_USER_DATA_VALUES:
+        for movie in each_list:
+            MOVIES.append(movie)
+    return list(set(MOVIES))
+
+
+# 4. Give name and chack is registered
+def get_name():
+    """ Function **get_username**   
+        give:
+        1. input first name
+        2. input last name
+        3. chack is user registered
+        4. if is not registered give 3 favarit movies
+    """
+
+    # input name and remove space in first and end and capital form
+    fist_name = input("Enter your first name: ").strip().capitalize()
+    last_name = input("Enter your last name: ").strip().capitalize()
+    full_name = f"{fist_name} {last_name}" # make full name
+    print(f"Welcome `{full_name}` to Daneshkar") # say wellcome
+
+    if not full_name in list(user_data.keys()): # in is not registered
+        print(f"Dear `{full_name}`, you have not been registered before.")
+        MOVIES = all_movies(user_data) # list all movies and print
+        print("Please enter your 3 favorite movies")
+        print("All available movies is: ")
+        print(MOVIES)
+        # give 3 favarit movies
+        movie_1 = input("Please enter the 'First' movie: ").strip().capitalize()
+        movie_2 = input("Please enter the 'Second' movie: ").strip().capitalize()
+        movie_3 = input("Please enter the 'Third' movie: ").strip().capitalize()
+        return full_name, movie_1, movie_2, movie_3
+
+    else: # if is registered
+        print(f"Dear `{full_name}`, you have already been registered.")
+        movie_1 = user_data[full_name][0]
+        movie_2 = user_data[full_name][1]
+        movie_3 = user_data[full_name][2]
+        return full_name, movie_1, movie_2, movie_3
+
+
+
+
+
+
+print("-----------------------start Code-----------------------")
 # my PATH
 PATH = r".\notebooks\Project\2. HW_L02_02_python\Mini Recommendation System"
 # PATH = "." # your PATH
+
+# chack json file (user.json)
 Checking_json_file(PATH)
 
+# read json file (user.json)
+user_data = read_json_file(PATH)
+
+# Give first and last name and 3 movies
+full_name, movie_1, movie_2, movie_3 = get_name()
+
+print(f"{full_name} your 3 favorite movies are {movie_1}, {movie_2}, {movie_3}")
