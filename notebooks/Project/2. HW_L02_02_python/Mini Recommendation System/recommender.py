@@ -77,14 +77,16 @@ def get_name():
         movie_1 = input("Please enter the 'First' movie: ").strip().capitalize()
         movie_2 = input("Please enter the 'Second' movie: ").strip().capitalize()
         movie_3 = input("Please enter the 'Third' movie: ").strip().capitalize()
-        return full_name, movie_1, movie_2, movie_3
+        user_movies = [movie_1, movie_2, movie_3]
+        return full_name, user_movies
 
     else: # if is registered
         print(f"Dear `{full_name}`, you have already been registered.")
         movie_1 = user_data[full_name][0]
         movie_2 = user_data[full_name][1]
         movie_3 = user_data[full_name][2]
-        return full_name, movie_1, movie_2, movie_3
+        user_movies = [movie_1, movie_2, movie_3]
+        return full_name, user_movies
 
 
 
@@ -103,6 +105,9 @@ Checking_json_file(PATH)
 user_data = read_json_file(PATH)
 
 # Give first and last name and 3 movies
-full_name, movie_1, movie_2, movie_3 = get_name()
+full_name, user_movies = get_name()
 
-print(f"{full_name} your 3 favorite movies are {movie_1}, {movie_2}, {movie_3}")
+print(f"{full_name} your 3 favorite movies are {user_movies[0]}, {user_movies[1]}, {user_movies[2]}")
+
+
+
