@@ -189,4 +189,3 @@ print(f"{full_name} your 3 favorite movies are {user_movies[0]}, {user_movies[1]
 
 # suggest one movie
 similar_and_suggestion_movie(user_data, full_name, user_movies)
-print(user_movies)
