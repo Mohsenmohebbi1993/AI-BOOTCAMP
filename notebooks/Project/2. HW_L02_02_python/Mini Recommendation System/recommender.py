@@ -89,7 +89,18 @@ def get_name():
         return full_name, user_movies
 
 
-
+# 5. rankig old user from movies new user
+def ranking_old_user(user_data, user_movies):
+    OLD_USERS = list(user_data.keys()) # list all old user
+    ranking_old_user = {}
+    for each_old_user in OLD_USERS:
+        grade_old_user = 0
+        for each_old_user_movie in user_data[each_old_user]:
+            for new_use_movie in user_movies:
+                if each_old_user_movie == new_use_movie:
+                    grade_old_user +=1
+        ranking_old_user[each_old_user] = grade_old_user
+    return ranking_old_user
 
 
 
@@ -109,5 +120,4 @@ full_name, user_movies = get_name()
 
 print(f"{full_name} your 3 favorite movies are {user_movies[0]}, {user_movies[1]}, {user_movies[2]}")
 
-
-
+ranking_old_user = ranking_old_user(user_data, user_movies)
