@@ -1,5 +1,5 @@
 # Make json file by pyrhon
-def make_json_file():
+def make_json_file(PATH:str):
     """ make default **users.json**   
         30 user with favorite movie
     
@@ -39,7 +39,7 @@ def make_json_file():
             "Mahdie Kazemi": ["Titanic", "Avatar", "Prestige", "Shutter Island", "Matrix"]}
 
     # your path
-    PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Mini Recommendation System"
+    # PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Mini Recommendation System"
     with open(f"{PATH}\\users.json", "w", encoding="utf-8") as f:
         json.dump(users, f, indent=4, ensure_ascii=False)
 
