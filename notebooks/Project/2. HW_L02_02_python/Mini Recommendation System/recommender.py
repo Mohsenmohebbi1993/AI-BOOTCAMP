@@ -25,7 +25,7 @@ def Checking_json_file(PATH:str):
         print("Creat users.json file in this Directory")
     else:
         print("Find users.json in this Directory")
-
+#-----------------------------------
 
 # 2. # Read json file
 def read_json_file(PATH:str):
@@ -37,7 +37,7 @@ def read_json_file(PATH:str):
     PATH_JSON_FILE = f"{PATH}\\{JSON_FILE}"
     with open(PATH_JSON_FILE, "r", encoding="utf-8") as f: user_data = json.load(f)
     return user_data
-
+#-----------------------------------
 
 # 3. finde all available movies
 def all_movies(user_data_from_json:dict):
@@ -49,7 +49,7 @@ def all_movies(user_data_from_json:dict):
         for movie in each_list:
             MOVIES.append(movie)
     return list(set(MOVIES))
-
+#-----------------------------------
 
 # 4. Give name and chack is registered
 def get_name():
@@ -59,6 +59,7 @@ def get_name():
         2. input last name
         3. chack is user registered
         4. if is not registered give 3 favarit movies
+        5. return full_name, user_movies
     """
 
     # input name and remove space in first and end and capital form
@@ -87,10 +88,13 @@ def get_name():
         movie_3 = user_data[full_name][2]
         user_movies = [movie_1, movie_2, movie_3]
         return full_name, user_movies
-
+#-----------------------------------
 
 # 5. rankig old user from movies new user
-def ranking_old_user(user_data, user_movies):
+def ranking_old_user(user_data:dict, user_movies:list)->dict:
+    """ function **ranking_old_user**   
+        rank old user by new user movies
+    """
     OLD_USERS = list(user_data.keys()) # list all old user
     ranking_old_user_dict = {}
     for each_old_user in OLD_USERS:
