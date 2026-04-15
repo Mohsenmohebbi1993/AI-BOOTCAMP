@@ -117,7 +117,24 @@ user_data = read_json_file(PATH)
 
 # Give first and last name and 3 movies
 full_name, user_movies = get_name()
-
 print(f"{full_name} your 3 favorite movies are {user_movies[0]}, {user_movies[1]}, {user_movies[2]}")
 
+# ranking old user by new user
 ranking_old_user = ranking_old_user(user_data, user_movies)
+
+# max similar user
+number_grade_old_user = max(ranking_old_user.values())
+
+# List of movies similar to the user
+OLD_USERS = list(ranking_old_user.keys())
+user_top_grade =[]
+for each_old_user in OLD_USERS:
+    if ranking_old_user[each_old_user] == number_grade_old_user:
+        user_top_grade.append(user_data[each_old_user])
+
+movie_list = []
+for i in range(len(user_top_grade)):
+    for j in user_top_grade[i]:
+        movie_list.append(j)
+
+movie_list = list(set(movie_list))
