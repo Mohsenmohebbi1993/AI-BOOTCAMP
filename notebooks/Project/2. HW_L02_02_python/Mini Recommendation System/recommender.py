@@ -137,11 +137,13 @@ def similar_and_suggestion_movie(user_data:dict, full_name:str, user_movies:list
     OLD_USER_LIST = list(user_data.keys())
     if not full_name in OLD_USER_LIST: # If the user is already registered, they have watched 5 movies
         # remove movie, that user see
+        duplicate_movie = 0
         for i in user_movies: # 3 movies
-            duplicate_movie = 0
+            
             if i in suggestion_movie_list:
                 suggestion_movie_list.remove(i)
                 duplicate_movie += 1
+        print(f"You have {duplicate_movie} movies in common with the users")
         if duplicate_movie != 0 :
             if len(suggestion_movie_list) != 0 : # if there is an unwatched shared movie
                 print(f"you see {user_movies}")
@@ -155,11 +157,14 @@ def similar_and_suggestion_movie(user_data:dict, full_name:str, user_movies:list
     else:
         # remove movie, that user see
         user_movies = user_data[full_name] # 5 movies
+        duplicate_movie = 0
         for i in user_movies:
-            duplicate_movie = 0
+            
             if i in suggestion_movie_list: # chack 5 movies
                 suggestion_movie_list.remove(i)
                 duplicate_movie += 1
+
+        print(f"You have {duplicate_movie} movies in common with the users")
         if duplicate_movie != 0:
             if len(suggestion_movie_list) != 0 : # if there is an unwatched shared movie
                 random_suggestion_movie = random.choices(suggestion_movie_list)
