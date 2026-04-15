@@ -43,7 +43,7 @@ def read_json_file(PATH:str):
 def all_movies(user_data_from_json:dict):
     """ **all_movies**  
     return all movies availabel"""
-    DICT_USER_DATA_VALUES = list(user_data.values())
+    DICT_USER_DATA_VALUES = list(user_data_from_json.values())
     MOVIES = []
     for each_list in DICT_USER_DATA_VALUES:
         for movie in each_list:
@@ -92,18 +92,86 @@ def get_name():
 # 5. rankig old user from movies new user
 def ranking_old_user(user_data, user_movies):
     OLD_USERS = list(user_data.keys()) # list all old user
-    ranking_old_user = {}
+    ranking_old_user_dict = {}
     for each_old_user in OLD_USERS:
         grade_old_user = 0
         for each_old_user_movie in user_data[each_old_user]:
             for new_use_movie in user_movies:
                 if each_old_user_movie == new_use_movie:
                     grade_old_user +=1
-        ranking_old_user[each_old_user] = grade_old_user
-    return ranking_old_user
+        ranking_old_user_dict[each_old_user] = grade_old_user
+    return ranking_old_user_dict
 
 
+# 6. movie similar and suggestion
+def similar_and_suggestion_movie(user_data:dict, full_name:str, user_movies:list)->str:
+    """ function **similar_and_suggestion_movie**    
+        1. by fuction ranking_old_user give rank user
+        2. List of movies similar to the user
+        3. suggestion one movie from one suggestion list
+        5. If the user is already registered, remove 5 movies
+        6. If the user is NOT already registered, remove 3 movies
+        7. print list moveis, that user see
+        8. print one movie suggestion
+    """
+    # max similar user
+    ranking_old_user_dict = ranking_old_user(user_data, user_movies)
+    number_grade_old_user = max(ranking_old_user_dict.values())
 
+    # List of movies similar to the user
+    OLD_USERS = list(ranking_old_user_dict.keys())
+    user_top_grade =[]
+    for each_old_user in OLD_USERS:
+        if ranking_old_user_dict[each_old_user] == number_grade_old_user:
+            user_top_grade.append(user_data[each_old_user])
+
+    # suggestion movie list (by Duplicate)
+    suggestion_movie_list = []
+    for i in range(len(user_top_grade)):
+        for j in user_top_grade[i]:
+            suggestion_movie_list.append(j)
+
+    # suggestion movie list (by NOT Duplicate)
+    suggestion_movie_list = list(set(suggestion_movie_list))
+
+    OLD_USER_LIST = list(user_data.keys())
+    if not full_name in OLD_USER_LIST: # If the user is already registered, they have watched 5 movies
+        # remove movie, that user see
+        for i in user_movies: # 3 movies
+            duplicate_movie = 0
+            if i in suggestion_movie_list:
+                suggestion_movie_list.remove(i)
+                duplicate_movie += 1
+        if duplicate_movie != 0 :
+            if len(suggestion_movie_list) != 0 : # if there is an unwatched shared movie
+                print(f"you see {user_movies}")
+                random_suggestion_movie = random.choices(suggestion_movie_list)
+                print(f"Recommended movie for you {random_suggestion_movie}")
+            else:
+                print("Sorry cant find suggestion movie")
+        else:
+            print("Sorry cant find suggestion movie")   
+
+    else:
+        # remove movie, that user see
+        user_movies = user_data[full_name] # 5 movies
+        for i in user_movies:
+            duplicate_movie = 0
+            if i in suggestion_movie_list: # chack 5 movies
+                suggestion_movie_list.remove(i)
+                duplicate_movie += 1
+        if duplicate_movie != 0:
+            if len(suggestion_movie_list) != 0 : # if there is an unwatched shared movie
+                random_suggestion_movie = random.choices(suggestion_movie_list)
+                print(f"you see {user_movies}")
+                print(f"Recommended movie for you {random_suggestion_movie}")
+            else:
+                print("Sorry cant find suggestion movie")
+        else:
+            print("Sorry cant find suggestion movie")
+
+
+#--------------------------- run code--------------------------
 print("-----------------------start Code-----------------------")
 # my PATH
 PATH = r".\notebooks\Project\2. HW_L02_02_python\Mini Recommendation System"
@@ -119,42 +187,6 @@ user_data = read_json_file(PATH)
 full_name, user_movies = get_name()
 print(f"{full_name} your 3 favorite movies are {user_movies[0]}, {user_movies[1]}, {user_movies[2]}")
 
-# ranking old user by new user
-ranking_old_user = ranking_old_user(user_data, user_movies)
-
-# max similar user
-number_grade_old_user = max(ranking_old_user.values())
-
-# List of movies similar to the user
-OLD_USERS = list(ranking_old_user.keys())
-user_top_grade =[]
-for each_old_user in OLD_USERS:
-    if ranking_old_user[each_old_user] == number_grade_old_user:
-        user_top_grade.append(user_data[each_old_user])
-
-# suggestion movie list (by Duplicate)
-suggestion_movie_list = []
-for i in range(len(user_top_grade)):
-    for j in user_top_grade[i]:
-        suggestion_movie_list.append(j)
-
-# suggestion movie list (by NOT Duplicate)
-suggestion_movie_list = list(set(suggestion_movie_list))
-
-
-OLD_USER_LIST = list(user_data.keys())
-if not full_name in OLD_USER_LIST: # If the user is already registered, they have watched 5 movies
-    # remove movie, that user see
-    for i in user_movies: # 3 movies
-        if i in suggestion_movie_list:
-            suggestion_movie_list.remove(i)
-    print(random.choices(suggestion_movie_list))
-else:
-    # remove movie, that user see
-    user_movies = user_data[full_name] # 5 movies
-    for i in user_movies:
-        if i in suggestion_movie_list: # 5 movies
-            suggestion_movie_list.remove(i)
-    print(random.choices(suggestion_movie_list))
-
-
+# suggest one movie
+similar_and_suggestion_movie(user_data, full_name, user_movies)
+print(user_movies)
