@@ -52,7 +52,7 @@ def all_movies(user_data_from_json:dict):
 #-----------------------------------
 
 # 4. Give name and chack is registered
-def get_name():
+def get_name(user_data:dict):
     """ Function **get_username**   
         give:
         1. input first name
@@ -181,21 +181,64 @@ def similar_and_suggestion_movie(user_data:dict, full_name:str, user_movies:list
             print("Sorry cant find suggestion movie")
 
 
-#--------------------------- run code--------------------------
-print("-----------------------start Code-----------------------")
-# my PATH
+# 7. Update user.json file
+def save_new_user(PATH:srt, user_data:dict, full_name:str, user_movies:list):
+    """ function **save_new_user** 
+        check user  
+        if is not in user.json, add to json file
+    """
+    OLD_USER = list(user_data.keys())
+
+    if not user_data in OLD_USER:
+        user_data[full_name] = user_movies
+
+    PATH_JSON_SAVE = f"{PATH}\\users.json"
+
+    with open(PATH_JSON_SAVE, "w", encoding="utf-8") as f:
+        json.dump(user_data, f, indent=4, ensure_ascii=False)
+
+
+# 8. join 7 function togther
+
+def recommender(PATH:str):
+    """ Join all Fucntion   
+    1. `Checking_json_file(PATH:str)`  
+    2. `read_json_file(PATH:str) ` 
+    3. `get_name(user_data:dict)`  
+    3.1. `get_name(user_data:dict)` to get_name  
+    4. `similar_and_suggestion_movie(user_data:dict, full_name:str, user_movies:list)`  
+    4.1. `ranking_old_user(user_data:dict, user_movies:list)` to similar_and_suggestion_movie   
+    5. `save_new_user(PATH, user_data, full_name, user_movies) ` 
+    """
+    # chack json file (user.json)
+    Checking_json_file(PATH)
+
+    # read json file (user.json)
+    user_data = read_json_file(PATH)
+
+    # Give first and last name and 3 movies
+    full_name, user_movies = get_name(user_data)
+    print(f"{full_name} your 3 favorite movies are {user_movies[0]}, {user_movies[1]}, {user_movies[2]}")
+
+    # suggest one movie
+    similar_and_suggestion_movie(user_data, full_name, user_movies)
+
+    save_new_user(PATH, user_data, full_name, user_movies)
+
+#--------------------------------
+
+# # my PATH
 PATH = r".\notebooks\Project\2. HW_L02_02_python\Mini Recommendation System"
-# PATH = "." # your PATH
+# # PATH = "." # your PATH
 
-# chack json file (user.json)
-Checking_json_file(PATH)
-
-# read json file (user.json)
-user_data = read_json_file(PATH)
-
-# Give first and last name and 3 movies
-full_name, user_movies = get_name()
-print(f"{full_name} your 3 favorite movies are {user_movies[0]}, {user_movies[1]}, {user_movies[2]}")
-
-# suggest one movie
-similar_and_suggestion_movie(user_data, full_name, user_movies)
+while True:
+    print("-----------------------start Code-----------------------")
+    print("1. Run (Enter number): 1")
+    print("2. Exit (Enter number): 2")
+    Status = int(input("Enter Your Status: "))
+    
+    if Status == 1:
+        recommender(PATH)
+    else:
+        print("-----------Thank you for your attention-----------")
+        break
