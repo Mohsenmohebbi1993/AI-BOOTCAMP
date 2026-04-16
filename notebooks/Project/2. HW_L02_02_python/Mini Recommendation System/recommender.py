@@ -105,7 +105,7 @@ def ranking_old_user(user_data:dict, user_movies:list)->dict:
                     grade_old_user +=1
         ranking_old_user_dict[each_old_user] = grade_old_user
     return ranking_old_user_dict
-
+#-----------------------------------
 
 # 6. movie similar and suggestion
 def similar_and_suggestion_movie(user_data:dict, full_name:str, user_movies:list)->str:
@@ -179,7 +179,7 @@ def similar_and_suggestion_movie(user_data:dict, full_name:str, user_movies:list
                 print("Sorry cant find suggestion movie")
         else:
             print("Sorry cant find suggestion movie")
-
+#-----------------------------------
 
 # 7. Update user.json file
 def save_new_user(PATH:srt, user_data:dict, full_name:str, user_movies:list):
@@ -196,7 +196,7 @@ def save_new_user(PATH:srt, user_data:dict, full_name:str, user_movies:list):
 
     with open(PATH_JSON_SAVE, "w", encoding="utf-8") as f:
         json.dump(user_data, f, indent=4, ensure_ascii=False)
-
+#-----------------------------------
 
 # 8. join 7 function togther
 
@@ -224,13 +224,17 @@ def recommender(PATH:str):
     similar_and_suggestion_movie(user_data, full_name, user_movies)
 
     save_new_user(PATH, user_data, full_name, user_movies)
+#-----------------------------------
 
-#--------------------------------
+#---------------------------------------- RUN --------------------------------
 
-# # my PATH
+# my PATH
 PATH = r".\notebooks\Project\2. HW_L02_02_python\Mini Recommendation System"
-# # PATH = "." # your PATH
+# PATH = "." # your PATH
 
+
+# test by Mohsen Mohebbi
+# test by new dirst name and last name
 while True:
     print("-----------------------start Code-----------------------")
     print("1. Run (Enter number): 1")
