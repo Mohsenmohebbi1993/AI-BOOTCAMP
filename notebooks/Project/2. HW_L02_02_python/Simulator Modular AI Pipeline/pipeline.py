@@ -1,5 +1,4 @@
 
-
 # packages
 # The abc package in Python stands for Abstract Base Classes
 from abc import ABC, abstractmethod
@@ -76,33 +75,44 @@ class Analyzer(PipelineStep):
         # Calculate the required statistics and return them in a dictionary
         # Handle the case where the input data is empty
         # # For unique words, using a set is a good approach. pass
-        total_line_in_text = len(data)
+
         print("----Calculate line, world in each line, avrage world and total world----")
+        # 1. count number of line
+        total_line_in_text = len(data)
         print(f"Total line in all text is : {total_line_in_text}")
 
+        # 2. count total word in each line
+        # 3. count word in all text
+        # 4. fund avrage word in line
         total_word_in_each_line = {} # dict of line and wold
         counter_word_in_all_text = 0 # count world
+
         for number_line in range(len(data)):
-            list_of_line = data[number_line].split()
-            number_word = len(list_of_line)
-            counter_word_in_all_text += number_word
-            total_word_in_each_line[f"line {number_line+1}"] = number_word
+            list_of_line = data[number_line].split() # create list for count word
+            number_word = len(list_of_line) # count word in each line
+
+            counter_word_in_all_text += number_word # add count word in each line to all
+            total_word_in_each_line[f"line {number_line+1}"] = number_word # creat dict fram line and count word
 
         avrage_word_in_each_line = counter_word_in_all_text / len(data) # avrage world
+        # 5. print result by f-string
         print(f"world in each line : {total_word_in_each_line}")
         print(f"avrage world in each line : {avrage_word_in_each_line}")
         print(f"total world in text : {counter_word_in_all_text}")
 
+
+
 PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline\TEXT.txt"
 
+# 1 -----------------------
 read_text = DataLoader()
 lines_of_text, counter_line = read_text.process(PATH)
 print("TEXT      :", lines_of_text)
-
+# 2 -----------------------
 preprocessor_text = Preprocessor()
 cleaned_lines = preprocessor_text.process(lines_of_text)
 print("TEXT clear:", cleaned_lines)
-
-
+# 3 -----------------------
 Analyzer_text = Analyzer()
 Analyzer_text.process(cleaned_lines)
+
