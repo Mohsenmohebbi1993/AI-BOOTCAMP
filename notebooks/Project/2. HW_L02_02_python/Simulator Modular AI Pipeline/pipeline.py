@@ -39,7 +39,7 @@ class DataLoader(PipelineStep):
                 counter_line += 1
             
             print("total line is {counter_line}")
-            print("TEXT      :", lines_of_text)
+            print("TEXT:", lines_of_text)
             return lines_of_text
         
         except FileNotFoundError:
@@ -166,21 +166,21 @@ class AIPipeline:
 
          
 
-PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline"
+# PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline"
 
-# 1 -----------------------
-lines_of_text = DataLoader().process(PATH)
-# 2 -----------------------
-cleaned_lines = Preprocessor().process(lines_of_text)
-# 3 -----------------------
-report_word = Analyzer().process(cleaned_lines)
-# 4 -----------------------
-ReportGenerator().print_to_console(report_word)
-ReportGenerator().save_to_file(report_word, PATH)
-print("----------------------------------------------------")
-pipeline  = AIPipeline(DataLoader(),
-                       Preprocessor(),
-                        Analyzer())
-PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline"
+# # 1 -----------------------
+# lines_of_text = DataLoader().process(PATH)
+# # 2 -----------------------
+# cleaned_lines = Preprocessor().process(lines_of_text)
+# # 3 -----------------------
+# report_word = Analyzer().process(cleaned_lines)
+# # 4 -----------------------
+# ReportGenerator().print_to_console(report_word)
+# ReportGenerator().save_to_file(report_word, PATH)
+# print("----------------------------------------------------")
+# pipeline  = AIPipeline(DataLoader(),
+#                        Preprocessor(),
+#                         Analyzer())
+# PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline"
 
-pipeline.run(PATH)
+# pipeline.run(PATH)
