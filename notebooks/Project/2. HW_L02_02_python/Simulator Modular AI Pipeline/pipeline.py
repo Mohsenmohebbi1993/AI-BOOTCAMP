@@ -99,6 +99,43 @@ class Analyzer(PipelineStep):
         print(f"world in each line : {total_word_in_each_line}")
         print(f"avrage world in each line : {avrage_word_in_each_line}")
         print(f"total world in text : {counter_word_in_all_text}")
+        report_word = {"total line": total_line_in_text,
+                       "avrage world in text": avrage_word_in_each_line,
+                       "total world in text": total_line_in_text}
+        return report_word
+        
+
+class ReportGenerator:
+    """ 
+    Generates and outputs reports from the analysis statistics. 
+    """
+    def print_to_console(self, stats: dict):
+        """ 
+        Prints the statistics in a formatted way to the console. 
+        """ 
+        # TODO: Implement the console printing logic. 
+        # Loop through the stats dictionary and print each key-value pair nicely.
+        print("---print_to_console from ReportGenerator---")
+        for i in stats:
+            print(f"{i} : {stats[i]}")
+        
+
+    def save_to_file(self, stats: dict, filepath: str): 
+        """ 
+        Saves the statistics in a formatted way to a text file. 
+        """ 
+        # TODO: Implement the file writing logic. 
+        # Open the specified file and write the stats to it.
+        print("---save report from analysis---") 
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write("Report of analysis is:\n")
+            for i in stats:
+                each_line = f"{i} : {stats[i]}"
+                f.write(f"{each_line}\n")
+
+       
+
+
 
 
 
@@ -111,5 +148,8 @@ print("TEXT      :", lines_of_text)
 cleaned_lines = Preprocessor().process(lines_of_text)
 print("TEXT clear:", cleaned_lines)
 # 3 -----------------------
-Analyzer().process(cleaned_lines)
-
+report_word = Analyzer().process(cleaned_lines)
+# 4 -----------------------
+PATH_SAVE = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline\report.txt"
+ReportGenerator().print_to_console(report_word)
+ReportGenerator().save_to_file(report_word, PATH_SAVE)
