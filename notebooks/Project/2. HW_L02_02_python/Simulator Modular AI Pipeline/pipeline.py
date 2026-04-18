@@ -26,9 +26,10 @@ class DataLoader(PipelineStep):
         # TODO: Implement file reading logic here.
         # Use a try-except block to handle potential errors.
         # Remember to strip newline characters from each line.
-        self.filepath = filepath
+        PATH_READ = f"{filepath}\\TEXT.txt"
+
         try:
-            with open(filepath, "r", encoding="utf-8") as f:
+            with open(PATH_READ, "r", encoding="utf-8") as f:
                 lines_of_text = f.readlines()
             self.lines_of_text = lines_of_text
             
@@ -36,7 +37,11 @@ class DataLoader(PipelineStep):
             counter_line = 0
             for _ in lines_of_text:
                 counter_line += 1
-            return lines_of_text, counter_line
+            
+            print("total line is {counter_line}")
+            print("TEXT      :", lines_of_text)
+            return lines_of_text
+        
         except FileNotFoundError:
             print("Not Found file, Please enter the correct path")
 
@@ -63,6 +68,7 @@ class Preprocessor(PipelineStep):
             text = text.replace("  "," ") # remove 2 space to 1 space
             cleaned_lines.append(text)
 
+        print("TEXT clear:", cleaned_lines)
         return cleaned_lines
 
 
@@ -99,11 +105,11 @@ class Analyzer(PipelineStep):
         print(f"world in each line : {total_word_in_each_line}")
         print(f"avrage world in each line : {avrage_word_in_each_line}")
         print(f"total world in text : {counter_word_in_all_text}")
+        # create dict from data
         report_word = {"total line": total_line_in_text,
                        "avrage world in text": avrage_word_in_each_line,
                        "total world in text": total_line_in_text}
         return report_word
-        
 
 class ReportGenerator:
     """ 
@@ -117,39 +123,64 @@ class ReportGenerator:
         # Loop through the stats dictionary and print each key-value pair nicely.
         print("---print_to_console from ReportGenerator---")
         for i in stats:
-            print(f"{i} : {stats[i]}")
+            print(f"{i} : {stats[i]}")  
+          
         
-
     def save_to_file(self, stats: dict, filepath: str): 
         """ 
         Saves the statistics in a formatted way to a text file. 
         """ 
         # TODO: Implement the file writing logic. 
         # Open the specified file and write the stats to it.
-        print("---save report from analysis---") 
-        with open(filepath, "w", encoding="utf-8") as f:
-            f.write("Report of analysis is:\n")
-            for i in stats:
-                each_line = f"{i} : {stats[i]}"
-                f.write(f"{each_line}\n")
+        PATH_SAVE = f"{filepath}\\report.txt"
+        try:
+            print("---save report from analysis---") 
+            with open(PATH_SAVE, "w", encoding="utf-8") as f:
+                f.write("Report of analysis is:\n")
+                for i in stats:
+                    each_line = f"{i} : {stats[i]}"
+                    f.write(f"{each_line}\n")
+            print("---------done save data--------")
+        except:
+            print("cant save analysis data")
 
-       
 
+class AIPipeline:
+    """ 
+    Orchestrates a series of pipeline steps to process data. 
+    """
+    def __init__(self, *steps: PipelineStep):
+        self.steps = steps
 
+    def run(self, initial_input: Any) -> Any: 
+        """ 
+        Executes all steps in the pipeline sequentially. 
+        """ 
+        # TODO: Implement the pipeline execution logic. 
+        # You need to loop through self.steps and call the process() method on each.
+        # The output of one step becomes the input to the next.
+        data = initial_input
+        for step in self.steps:
+            data = step.process(data)
+        return data
 
+         
 
-
-PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline\TEXT.txt"
+PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline"
 
 # 1 -----------------------
-lines_of_text, counter_line = DataLoader().process(PATH)
-print("TEXT      :", lines_of_text)
+lines_of_text = DataLoader().process(PATH)
 # 2 -----------------------
 cleaned_lines = Preprocessor().process(lines_of_text)
-print("TEXT clear:", cleaned_lines)
 # 3 -----------------------
 report_word = Analyzer().process(cleaned_lines)
 # 4 -----------------------
-PATH_SAVE = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline\report.txt"
 ReportGenerator().print_to_console(report_word)
-ReportGenerator().save_to_file(report_word, PATH_SAVE)
+ReportGenerator().save_to_file(report_word, PATH)
+print("----------------------------------------------------")
+pipeline  = AIPipeline(DataLoader(),
+                       Preprocessor(),
+                        Analyzer())
+PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline"
+
+pipeline.run(PATH)
