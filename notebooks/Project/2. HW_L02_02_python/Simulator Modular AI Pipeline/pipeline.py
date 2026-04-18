@@ -105,14 +105,11 @@ class Analyzer(PipelineStep):
 PATH = r"C:\Mohsen Folder\Ai Bootcamp\Ai Bootcamp\notebooks\Project\2. HW_L02_02_python\Simulator Modular AI Pipeline\TEXT.txt"
 
 # 1 -----------------------
-# read_text = DataLoader()
 lines_of_text, counter_line = DataLoader().process(PATH)
 print("TEXT      :", lines_of_text)
 # 2 -----------------------
-# preprocessor_text = Preprocessor()
 cleaned_lines = Preprocessor().process(lines_of_text)
 print("TEXT clear:", cleaned_lines)
 # 3 -----------------------
-# Analyzer_text = Analyzer()
 Analyzer().process(cleaned_lines)
 
