@@ -1,7 +1,7 @@
 from rectangle import Rectangle
 from circle import Circle
 
-list_of_shape = [(Rectangle, (3, 4)), (Circle, (5,))]
+list_of_shape = [(Rectangle, (3, 4)), (Circle, (5,)), (Rectangle, (-2, 5))]
 
 for ctor, arge in list_of_shape:
     shape = ctor(*arge)
