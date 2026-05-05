@@ -30,6 +30,7 @@ while True:
         count_vowels(TEXT)
     elif Status == 2:
         TEXT = input("Enter your Text: ")
+        count_vowels(TEXT)
     else:
         print("-----------Thank you-----------")
         break
