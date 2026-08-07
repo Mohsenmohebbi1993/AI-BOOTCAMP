@@ -1,5 +1,6 @@
 # Data
 /data/
+/.venv_py3_12_10/
 
 # Mac OS-specific storage files
 .DS_Store
