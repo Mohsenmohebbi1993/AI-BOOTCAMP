@@ -5,3 +5,4 @@
 *.png
 *.joblib
 *data
+*data_FashionMNIST
