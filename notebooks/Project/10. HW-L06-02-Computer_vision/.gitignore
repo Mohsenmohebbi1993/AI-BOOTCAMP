@@ -2,5 +2,6 @@
 *.csv
 *.rar
 *.npz
+*.jpg
 *kmnist
 *Chessman-image-dataset
