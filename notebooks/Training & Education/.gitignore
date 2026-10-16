@@ -6,3 +6,4 @@
 *.joblib
 *data
 *data_FashionMNIST
+*data_Oxford
