@@ -1,0 +1,7 @@
+*.pdf
+*.csv
+*.zip
+*.jpg
+*weizmann_horse_db
+*weizmann_horse_db/horse_db
+*weizmann_horse_db/mask
